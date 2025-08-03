@@ -17,6 +17,7 @@ Since HTML forms support only `GET` and `POST`, actions like **update** and **de
 
 ```bash
 git clone https://github.com/TaraDesk/all-frameworks-crud.git
+cd all-frameworks-crud
 ```
 
 ### 2. Create and Activate a Virtual Environment
@@ -37,7 +38,7 @@ pip install -r requirements.txt
 Create a `.env` file to store environment variables, or set them manually. To create the `.env` file, run:
 
 ```bash
-cd all-frameworks-crud/FLASK
+cd FLASK
 touch .env
 ```
 
@@ -50,6 +51,7 @@ SECRET_KEY=your-secret-key
 ### 5. Initialize the Database
 
 ```bash
+mkdir src/database
 flask --app src.app db init
 flask --app src.app db migrate
 flask --app src.app db upgrade
@@ -59,7 +61,7 @@ flask --app src.app db upgrade
 ```bash
 python main.py
 ```
-Once the server starts, **click the link shown in your terminal** (usually `http://127.0.0.1:5000`) to open the app in your browser.
+Once the server starts, **click the link shown in your terminal** (usually `http://127.0.0.1:22`) to open the app in your browser.
 
 ## Project Structure
 
