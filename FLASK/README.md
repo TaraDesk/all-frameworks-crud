@@ -6,7 +6,7 @@ Since HTML forms support only `GET` and `POST`, actions like **update** and **de
 
 ## Requirements
 
-- Python 3.10+
+- Python 3.12+
 - Flask
 - SQLite
 - virtualenv
