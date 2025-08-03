@@ -1,4 +1,4 @@
-# Flask Framework 
+# Django Framework 
 
 This project is the **DJANGO** implementation of a basic CRUD application for the all-frameworks-crud collection. In addition to CRUD operations, the project also includes a basic authentication system (login/register) and file upload functionality, offering a complete foundation for typical web applications.
 
@@ -61,10 +61,14 @@ Copy the output and paste it in place of your-generated-secret-key above.
 ### 5. Apply Migrations and Create Superuser
 
 ```bash
-python manage.py makemigrations
+python manage.py makemigrations core
+python manage.py migrate
+python manage.py makemigrations tools
 python manage.py migrate
 python manage.py createsuperuser
 ```
+> **Note:**
+> Sorry if this part takes a while — I deleted the `migrations/` folders for each app, so you’ll need to reinitialize the migrations manually. That’s why we’re running `makemigrations` separately for each app.
 
 ### 6. Run the Application
 
