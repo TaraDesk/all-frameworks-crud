@@ -1,0 +1,67 @@
+<x-layout>
+    <x-slot:title>
+        Profile | Laravel App - TaraDesk
+    </x-slot:title>
+
+    <main class="h-screen w-screen flex items-center justify-center bg-gray-50">
+        <div class="bg-white w-[90vw] h-[90vh] shadow-lg rounded-2xl flex flex-col overflow-hidden border border-gray-100">
+    
+            <x-navbar />
+        
+            <div class="p-6 space-y-6 overflow-auto">
+                <div>
+                    <a href="{{ route('home') }}" class="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-medium text-sm transition">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Back</span>
+                    </a>
+                </div>
+    
+                <div class="flex flex-col lg:flex-row lg:items-start gap-8">
+                    <div class="flex-1 space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center border border-green-200">
+                                <i class="fas fa-user text-sm text-green-600"></i>
+                            </div>
+                            <div>
+                                <h1 class="text-lg font-semibold text-gray-900">{{ $user->name }}</h1>
+                                <p class="text-gray-500 text-sm">Joined: {{ $user->created_at->format('M d, Y') }}</p>
+                            </div>
+                        </div>
+    
+                        <div class="space-y-4">
+                            <div class="flex flex-col">
+                                <label class="text-sm font-medium text-gray-700">Full Name</label>
+                                <p class="text-gray-900 mt-1">{{ $user->name }}</p>
+                            </div>
+                            <div class="flex flex-col">
+                                <label class="text-sm font-medium text-gray-700">Email Address</label>
+                                <p class="text-gray-900 mt-1">{{ $user->email }}</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="flex flex-col justify-start gap-4 pt-5 lg:pt-0 lg:w-48">
+                        <button 
+                            data-toggle="update-modal"
+                            class="px-5 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 hover:text-green-700 transition flex items-center justify-center gap-2">
+                            <i class="fas fa-edit text-sm"></i>
+                            Edit Profile
+                        </button>
+                        <button 
+                            data-toggle="delete-account-modal"
+                            class="px-5 py-2.5 text-sm font-medium text-red-600 bg-white border border-gray-300 rounded-lg hover:bg-red-50 hover:text-red-700 transition flex items-center justify-center gap-2">
+                            <i class="fas fa-trash-alt text-sm"></i>
+                            Delete Account
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Update Modal -->
+        <x-modals.user-edit :user="$user"/>
+
+        <!-- Delete Modal -->
+        <x-modals.user-delete />
+    </main>
+</x-layout>

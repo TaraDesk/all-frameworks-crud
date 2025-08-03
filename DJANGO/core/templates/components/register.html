@@ -1,0 +1,74 @@
+<section id="register-modal" tabindex="-1" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/20 backdrop-blur-sm transition-opacity duration-300">
+    <div class="w-full max-w-lg p-5 sm:p-6">
+        <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+            <div class="flex items-center justify-between p-5 border-b border-gray-100">
+                <h3 class="text-lg font-semibold text-gray-900">Create your account</h3>
+                <button type="button" class="close text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-lg w-8 h-8 inline-flex items-center justify-center transition">
+                    <i class="fas fa-times text-sm"></i>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+    
+            <div class="p-5 sm:p-6">
+                <form class="space-y-5" method="POST" action="{% url 'core:register' %}">
+                    {% csrf_token %}
+    
+                    <div>
+                        <label for="name" class="block mb-2 text-sm font-medium text-gray-700">Your name</label>
+                        <input
+                            type="text"
+                            name="name" id="name" placeholder="John Doe"
+                            value="{{ form_data.register_data.name }}"
+                            required
+                            class="w-full bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:outline-none focus:ring-2 focus:ring-green-200 focus:border-green-500 p-3 transition duration-150"
+                        />
+                    </div>
+        
+                    <div>
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-700">Your email</label>
+                        <input
+                            type="email"
+                            name="email" id="email" placeholder="name@company.com"
+                            value="{{ form_data.register_data.email }}"
+                            required
+                            class="w-full bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:outline-none focus:ring-2 focus:ring-green-200 focus:border-green-500 p-3 transition duration-150"
+                        />
+                    </div>
+        
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="password1" class="block mb-2 text-sm font-medium text-gray-700">Password</label>
+                            <input
+                                type="password"
+                                name="password1" id="password1" placeholder="••••••••"
+                                required
+                                class="w-full bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:outline-none focus:ring-2 focus:ring-green-200 focus:border-green-500 p-3 transition duration-150"
+                            />
+                        </div>
+                        <div>
+                            <label for="password2" class="block mb-2 text-sm font-medium text-gray-700">Confirm password</label>
+                            <input
+                                type="password"
+                                name="password2" id="password2" placeholder="••••••••"
+                                required
+                                class="w-full bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:outline-none focus:ring-2 focus:ring-green-200 focus:border-green-500 p-3 transition duration-150"
+                            />
+                        </div>
+                    </div>
+        
+                    <button type="submit" class="w-full py-3 px-4 text-sm font-semibold text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 rounded-lg transition-all duration-200 shadow-sm hover:shadow focus:shadow-md">
+                        Create Account
+                    </button>
+        
+                    <div class="text-sm text-center text-gray-600 mt-1">
+                        Already have an account?
+                        <button type="button" data-switch="login-modal"
+                            class="font-medium text-green-600 hover:text-green-700 hover:underline transition-colors duration-150">
+                            Sign in
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

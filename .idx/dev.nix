@@ -2,12 +2,14 @@
 # see: https://developers.google.com/idx/guides/customize-idx-env
 { pkgs, ... }: {
   # Which nixpkgs channel to use.
-  channel = "stable-24.05"; # or "unstable"
+  channel = "stable-25.05"; # or "unstable"
   # Use https://search.nixos.org/packages to find packages
   packages = [
     # pkgs.go
-    # pkgs.python311
-    # pkgs.python311Packages.pip
+    pkgs.python312
+    pkgs.python312Packages.pip
+    pkgs.php82
+    pkgs.php82Packages.composer
     # pkgs.nodejs_20
     # pkgs.nodePackages.nodemon
   ];
@@ -16,7 +18,14 @@
   idx = {
     # Search for the extensions you want on https://open-vsx.org/ and use "publisher.id"
     extensions = [
-      # "vscodevim.vim"
+      "onecentlin.laravel-blade"
+      "amiralizadeh9480.laravel-extra-intellisense"
+      "onecentlin.laravel5-snippets"
+      "bmewburn.vscode-intelephense-client"
+      "qwtel.sqlite-viewer"
+      "ms-python.python"
+      "batisteo.vscode-django"
+      "samuelcolvin.jinjahtml"
     ];
     # Enable previews
     previews = {

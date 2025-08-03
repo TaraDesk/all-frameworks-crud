@@ -1,0 +1,19 @@
+<div id="success-overlay" class="fixed inset-0 z-50 flex items-center justify-center bg-black/10 backdrop-blur-sm transition-all duration-300" style="opacity: 100;">
+    <div class="bg-white w-full max-w-sm mx-auto rounded-2xl shadow-lg border border-gray-100 p-6 text-center scale-95 transition-all duration-200 ease-out">
+        <div class="flex flex-col items-center space-y-4">
+            <div class="text-green-500 text-4xl drop-shadow-sm">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+
+            <h2 class="text-lg font-semibold text-gray-900">Success</h2>
+            <p class="text-gray-600 text-sm leading-relaxed">
+                {{ $message }}
+            </p>
+
+            <button onclick="closeSuccessOverlay()"
+                class="mt-2 px-5 py-2 text-sm font-medium text-white bg-green-600 hover:bg-green-700 rounded-lg transition-colors duration-150 shadow-sm hover:shadow focus:outline-none focus:ring-2 focus:ring-green-300">
+                Close
+            </button>
+        </div>
+    </div>
+</div>

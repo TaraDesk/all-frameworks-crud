@@ -1,0 +1,20 @@
+# Dev environment
+pip
+autopep8
+python-dotenv
+python-decouple
+
+# Django App
+asgiref==3.9.1
+Django==5.2.4
+sqlparse==0.5.3
+typing_extensions==4.14.1
+Pillow==11.3.0
+
+# Flask App
+flask==3.1.1
+flask-sqlalchemy==3.1.1
+flask-migrate==4.1.0
+flask-login==0.6.3
+flask-bcrypt==1.0.1
+flask-wtf==1.2.2
